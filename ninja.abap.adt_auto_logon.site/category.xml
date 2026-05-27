@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="ninja.abap.adt_auto_logon.feature" version="0.0.0">
+      <category name="ninja.abap.adt_auto_logon"/>
+   </feature>
+
+   <category-def name="ninja.abap.adt_auto_logon" label="ADT Auto-Logon">
+      <description>
+         Automatic background authentication for ABAP Cloud projects in Eclipse ADT.
+      </description>
+   </category-def>
+</site>

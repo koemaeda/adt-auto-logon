@@ -1,0 +1,16 @@
+# Build output
+target/
+bin/
+
+# Compiled classes and archives
+*.class
+*.jar
+!lib/*.jar
+
+# Eclipse IDE metadata
+.project
+.classpath
+.settings/
+
+# Tycho pomless markers
+.polyglot.*

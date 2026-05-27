@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ADT Auto-Logon
+Bundle-SymbolicName: ninja.abap.adt_auto_logon;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: ninja.abap.adt_auto_logon.Activator
+Bundle-Vendor: abap.ninja
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.equinox.security,
+ org.eclipse.ui.ide,
+ com.sap.adt.destinations.model;resolution:=optional,
+ com.sap.adt.destinations.ui;resolution:=optional,
+ com.sap.adt.destinations;resolution:=optional,
+ com.sap.adt.communication;resolution:=optional,
+ com.sap.adt.tools.cloud.authentication.ui;resolution:=optional,
+ com.sap.adt.util;resolution:=optional
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Automatic-Module-Name: ninja.abap.adt_auto_logon
+Bundle-ActivationPolicy: lazy
+Export-Package: ninja.abap.adt_auto_logon,
+ ninja.abap.adt_auto_logon.preferences,
+ ninja.abap.adt_auto_logon.handler

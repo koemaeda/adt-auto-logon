@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <!--
+        UI auth handler: replaces the browser-based logon wizard with
+        headless IAS authentication when stored credentials are available.
+        Falls back to the original browser flow otherwise.
+   -->
+   <extension point="com.sap.adt.destinations.ui.httpAuthenticationHandlerUi">
+      <handler
+            authenticationKind="com.sap.adt.http.authentication.kind.oAuth"
+            class="ninja.abap.adt_auto_logon.handler.HeadlessAuthHandlerUi"/>
+      <handler
+            authenticationKind="com.sap.adt.http.authentication.kind.samlAndReentranceTicket"
+            class="ninja.abap.adt_auto_logon.handler.HeadlessAuthHandlerUi"/>
+      <handler
+            authenticationKind="basicAuth"
+            class="ninja.abap.adt_auto_logon.handler.HeadlessAuthHandlerUi"/>
+   </extension>
+
+   <!-- Project properties page (right-click project > Properties) -->
+   <extension point="org.eclipse.ui.propertyPages">
+      <page
+            id="ninja.abap.adt_auto_logon.preferencesPage"
+            name="Auto-Logon"
+            class="ninja.abap.adt_auto_logon.preferences.PreferencesPropertyPage">
+         <enabledWhen>
+            <adapt type="org.eclipse.core.resources.IProject">
+               <test property="org.eclipse.core.resources.projectNature"
+                     value="com.sap.adt.abapnature"/>
+            </adapt>
+         </enabledWhen>
+      </page>
+   </extension>
+
+   <!-- Early startup: ensures our handler wins the factory cache race -->
+   <extension point="org.eclipse.ui.startup">
+      <startup class="ninja.abap.adt_auto_logon.handler.HandlerInstaller"/>
+   </extension>
+
+</plugin>

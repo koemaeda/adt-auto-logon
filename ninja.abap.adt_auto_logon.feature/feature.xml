@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="ninja.abap.adt_auto_logon.feature"
+      label="ADT Auto-Logon"
+      version="1.0.0.qualifier"
+      provider-name="abap.ninja">
+
+   <description>
+      Automatic background authentication for ABAP projects in Eclipse ADT.
+      Stores credentials securely and eliminates login popups for both
+      ABAP Cloud (BTP) and on-premise systems.
+   </description>
+
+   <license url="https://www.apache.org/licenses/LICENSE-2.0">
+      Apache License, Version 2.0
+   </license>
+
+   <plugin
+         id="ninja.abap.adt_auto_logon"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
